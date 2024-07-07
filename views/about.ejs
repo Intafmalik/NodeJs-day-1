@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form NodeJs</title>
+    <style>
+        body{
+            height: min(100vh);
+            display: grid;
+            place-content: center;
+            align-content: center;
+
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+            width: max-content;
+            font-size: large;
+            gap: 6px;
+            color: black;
+        }
+        input{
+            font-size: large;
+        }
+        button{
+            cursor: pointer;
+            height: 1.5rem;
+            width: max-content;
+            display: inline-block;
+            position: relative;
+            left: 25%;
+
+
+        }
+    </style>
+</head>
+<body>
+    
+    <h3><%- (form.name)%></h3>
+    <form class="form">
+        <input type="text" placeholder="Enter your name">
+        <input type="email" placeholder="Enter your email">
+        <input type="number" placeholder="Enter your roll number">
+        <button type="submit">Submit</button>
+        
+    </form>
+    
+
+</body>
+</html>
