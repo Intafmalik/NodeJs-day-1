@@ -1,6 +1,7 @@
 const express = require("express");
 const { connect } = require("mongoose");
 const connectToDb = require("./database/databaseConnection");
+const Blog = require("./database/schemas");
 
 const app = express()
 var PORT = 3000;
@@ -10,10 +11,26 @@ app.set("views", "./views")
 
 connectToDb()
 
-// const nameAge = {
-//     name: "Ram",
-//     age: 20
-// }
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
+app.post("/createblog", async(req,res)=>
+{
+
+    const {title,subtitle,description}=req.body
+    console.log({title,subtitle,description})
+    await Blog.create({
+   title,
+   subtitle,
+   description
+    });
+    res.send("Blog created sucessfully")
+})
+
+
+app.get("/createblog",(req,res)=>{
+res.render("day2form")
+})
 
 const form = {name : "Acess Form"}
 
@@ -24,6 +41,5 @@ console.log("hello")
 })
 
 app.listen(PORT,()=>{
-    console.log(`This is server is started at http://localhost:${PORT}/intaf `)
-    // console.log("The Server is started at " + 30000)
+    console.log(`This is server is started at http://localhost:${PORT} `)
 })
