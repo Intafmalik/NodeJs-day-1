@@ -1,4 +1,6 @@
-const express = require("express")
+const express = require("express");
+const { connect } = require("mongoose");
+const connectToDb = require("./database/databaseConnection");
 
 const app = express()
 var PORT = 3000;
@@ -6,6 +8,7 @@ var PORT = 3000;
 app.set("view engine", "ejs")
 app.set("views", "./views")
 
+connectToDb()
 
 // const nameAge = {
 //     name: "Ram",
