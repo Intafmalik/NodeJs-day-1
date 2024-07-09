@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Navbar and Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #343a40;
+      padding: 1rem;
+      color: white;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      margin: 0 0.5rem;
+    }
+    .navbar a:hover {
+      color: #ffc107;
+    }
+    .navbar .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    .card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      margin: 1rem auto;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .card img {
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      width: 100%;
+    }
+    .card-body {
+      padding: 1rem;
+    }
+    .card-title {
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+      color: #343a40;
+    }
+    .card-text {
+      margin-bottom: 1rem;
+      color: #6c757d;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      color: #fff;
+      background-color: #007bff;
+      border-radius: 4px;
+      text-decoration: none;
+      text-align: center;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    .price {
+      color: #28a745;
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="#">E-Shop</a>
+    <div>
+      <a class="nav-link" href="#">Home</a>
+      <a class="nav-link" href="#">Products</a>
+      <a class="nav-link" href="#">About Us</a>
+      <a class="nav-link" href="#">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Card Container -->
+  <div class="container">
+    <% blogs.forEach((index) => { %>
+      <div class="card">
+        <img src="<%= index.image %>" alt="Product Image">
+        <div class="card-body">
+          <h5 class="card-title"><%= index.title %></h5>
+          <p class="price"><%= index.price %></p>
+          <p class="card-text"><%= index.description %></p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+
+</body>
+</html>
