@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar and Content Example</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        .nav-title h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .nav-title p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .content {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .content-img {
+            width: 200px;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .content-title {
+            font-size: 28px;
+            margin: 10px 0;
+        }
+
+        .content-subtitle {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-title">
+                <h1>Website Title</h1>
+                <p>Subtitle goes here</p>
+            </div>
+        </div>
+    </nav>
+    <div class="content">
+        <img src="/<%- clickblog.image %>" alt="Content Image" class="content-img">
+        <h1 class="content-title"><%- clickblog.title %></h1>
+        <h3 class="content-subtitle"><%- clickblog.subtitle %></h3>
+        <p class="content-description"><%- clickblog.description %></p>
+        <a href="/editblog/<%- clickblog._id %>"> <button>Edit</button></a>
+        <a href="/deleteblog/<%- clickblog._id %>"> <button>Delete </button></a>
+    </div>
+</body>
+</html>

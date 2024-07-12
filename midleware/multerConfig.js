@@ -5,6 +5,7 @@ const storage = multer.diskStorage({
         cb(null,"./storage")  
     },
     filename : function(req,file,cb){
+        //cb call back function
         cb(null,file.originalname)
     }
 })
